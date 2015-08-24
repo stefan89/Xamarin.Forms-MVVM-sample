@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFdemo.iOS", "iOS\XFdemo.iOS.csproj", "{40B800BF-FD44-4C61-ABAC-8C20DA1E11F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMXamarinFormsDemo.iOS", "iOS\MVVMXamarinFormsDemo.iOS.csproj", "{40B800BF-FD44-4C61-ABAC-8C20DA1E11F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFdemo.Droid", "Droid\XFdemo.Droid.csproj", "{39C17500-9EB6-4C1D-ADAD-447DCB724DAC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMXamarinFormsDemo.Droid", "Droid\MVVMXamarinFormsDemo.Droid.csproj", "{39C17500-9EB6-4C1D-ADAD-447DCB724DAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFdemo", "Forms\XFdemo.csproj", "{6BEF064D-9839-4F6A-B8B0-81BFB233EB97}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMXamarinFormsDemo", "Forms\MVVMXamarinFormsDemo.csproj", "{6BEF064D-9839-4F6A-B8B0-81BFB233EB97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -140,9 +140,9 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.4.4.6392\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.4.4.6392\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <ItemGroup>
-    <ProjectReference Include="..\Forms\XFdemo.csproj">
+    <ProjectReference Include="..\Forms\MVVMXamarinFormsDemo.csproj">
       <Project>{6BEF064D-9839-4F6A-B8B0-81BFB233EB97}</Project>
-      <Name>XFdemo</Name>
+      <Name>MVVMXamarinFormsDemo</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
