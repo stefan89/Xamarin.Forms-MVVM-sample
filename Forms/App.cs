@@ -6,6 +6,9 @@ namespace XFdemo
 	{
 		public App ()
 		{
+			DependencyService.Register<NavigationService, NavigationService> ();
+			DependencyService.Register<MessageVisualizerService, MessageVisualizerService> ();
+
 			var navigationPage = new NavigationPage (new TodoItemsContentPage ());
 
 			MainPage = navigationPage;

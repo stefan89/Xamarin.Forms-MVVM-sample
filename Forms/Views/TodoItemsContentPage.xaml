@@ -38,6 +38,12 @@
 				TextColor="Blue"
 				Command="{Binding AddNewTodoCommand}"/>
 
+			<Button
+				Text="Navigate to second page"
+				BackgroundColor="White"
+				TextColor="Blue"
+				Command="{Binding NavigateToSecondPageCommand}"/>
+
 		</StackLayout>
 
 	</ContentPage.Content>

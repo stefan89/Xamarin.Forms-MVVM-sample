@@ -8,10 +8,30 @@ namespace XFdemo
 {
 	public class TodoItemsViewModel : BaseViewModel
 	{
-		public ICommand RefreshListCommand { get; set; }
-		public ICommand AddNewTodoCommand { get; set; }
+		public ICommand RefreshListCommand { 
+			get {
+				return new Command (() => {
+					TodoItems.Add (new TodoItem { Name = "Pull to refresh item", Description = "Demo item"});
+					IsRefreshing = false;
+				});
+			}
+		}
 
-		public ObservableCollection<TodoItem> TodoItems { get; set; }
+		public ICommand AddNewTodoCommand {
+			get {
+				return new Command (() => {
+					TodoItems.Add (new TodoItem { Name = "Button clicked item", Description = "Demo item"});
+				});
+			}
+		}
+
+		public ICommand NavigateToSecondPageCommand {
+			get {
+				return new Command (async() => {
+					await DependencyService.Get<NavigationService>().GoToPage (new SecondContentPage());
+				});
+			}
+		}
 
 		bool _isRefreshing;
 		public bool IsRefreshing {
@@ -40,6 +60,8 @@ namespace XFdemo
 			}
 		}
 
+		public ObservableCollection<TodoItem> TodoItems { get; set; }
+
 		public TodoItemsViewModel ()
 		{
 			TodoItems = new ObservableCollection<TodoItem> { 
@@ -49,20 +71,12 @@ namespace XFdemo
 				new TodoItem { Name = "Rekeningen betalen", Description = "Openstaande rekeningen betalen" },
 				new TodoItem { Name = "Cadeau kopen", 		Description = "Verjaardagscadeau kopen voor Pietje" }
 			};
-
-			RefreshListCommand = new Command (() => {
-				TodoItems.Add (new TodoItem { Name = "Pull to refresh item", Description = "Demo item"});
-				IsRefreshing = false;
-			});
-
-			AddNewTodoCommand = new Command (() => {
-				TodoItems.Add (new TodoItem { Name = "Button clicked item", Description = "Demo item"});
-			});
 		}
 
-		public void HandleItemSelected(TodoItem selectedTodoItem)
+		async void HandleItemSelected(TodoItem selectedTodoItem)
 		{
-			Debug.WriteLine (selectedTodoItem.Name + " clicked");
+			await DependencyService.Get<MessageVisualizerService> ().ShowMessage ("Item clicked", selectedTodoItem.Name + " clicked", "OK");
+//			Debug.WriteLine (selectedTodoItem.Name + " clicked");
 		}
 	}
 }
